@@ -12,6 +12,13 @@ include_once "nav.php";
             <div class="form-group">
                 <label for="name">Name</label>
                 <input name="name" placeholder="Name" type="text" id="name" class="form-control" required>
+                <label for="name">lastname</label>
+                <input name="lastname" placeholder="lastname" type="text" id="lastname" class="form-control" required>
+                <label for="position">Position</label>
+                <input name="position" placeholder="position" type="text" id="position" class="form-control" required>
+                <label for="schedule">Schedule</label>
+                <input name="schedule" placeholder="schedule" type="text" id="schedule" class="form-control" required>
+                
             </div>
             <div class="form-group">
                 <button class="btn btn-success">

@@ -19,6 +19,9 @@ $employees = getEmployees();
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
+                        <th>lastname</th>
+                        <th>Position</th>
+                        <th>schedule</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -31,6 +34,15 @@ $employees = getEmployees();
                             </td>
                             <td>
                                 <?php echo $employee->name ?>
+                            </td>
+                            <td>
+                                <?php echo $employee->lastname ?>
+                            </td>
+                            <td>
+                                <?php echo $employee->Position ?>
+                            </td>
+                            <td>
+                                <?php echo $employee->Schedule ?>
                             </td>
                             <td>
                                 <a class="btn btn-warning" href="employee_edit.php?id=<?php echo $employee->id ?>">

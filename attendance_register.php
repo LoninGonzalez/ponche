@@ -23,6 +23,18 @@ include_once "nav.php";
                             Employee
                         </th>
                         <th>
+                        lastname
+                        </th>
+                        <th>
+                        position
+                        </th>
+                        <th>
+                        schedule
+                        </th>
+                        <th>
+                        Position
+                        </th>
+                        <th>
                             Status
                         </th>
                     </tr>
@@ -30,7 +42,12 @@ include_once "nav.php";
                 <tbody>
                     <tr v-for="employee in employees">
                         <td>{{employee.name}}</td>
-                        <td>
+                        <tr v-for="employee in employees">
+                        <td>{{employee.lastname}}</td>
+                        <tr v-for="employee in employees">
+                        <td>{{employee.position}}</td>
+                        <tr v-for="employee in employees">
+                        <td>{{employee.schedule}}</td>
                             <select v-model="employee.status" class="form-control">
                                 <option disabled value="unset">--Select--</option>
                                 <option value="presence">Presence</option>
@@ -70,6 +87,9 @@ include_once "nav.php";
                 let employeesMapped = this.employees.map(employee => {
                     return {
                         id: employee.id,
+                        lastname: employee.lastname,
+                        position: employee.position,
+                        schedule: employee.schedule,
                         status: employee.status,
                     }
                 });
@@ -99,6 +119,8 @@ include_once "nav.php";
                     return {
                         id: employee.id,
                         name: employee.name,
+                        position: employee.position,
+                        lastname: employee.lastname,
                         status: UNSET_STATUS,
                     }
                 });

@@ -53,28 +53,28 @@ function deleteEmployee($id)
 function updateEmployee($name, $id)
 {
     $db = getDatabase();
-    $statement = $db->prepare("UPDATE employees SET name = ? WHERE id = ?");
-    return $statement->execute([$name, $id]);
+    $statement = $db->prepare("UPDATE employees SET name = ? lastname = ? position = ? schedule = ? WHERE id = ?");
+    return $statement->execute([$name, $lastname, $position, $schedule,  $id]);
 }
 function getEmployeeById($id)
 {
     $db = getDatabase();
-    $statement = $db->prepare("SELECT id, name FROM employees WHERE id = ?");
+    $statement = $db->prepare("SELECT id, name, lastname, position, schedule FROM employees WHERE id = ?");
     $statement->execute([$id]);
     return $statement->fetchObject();
 }
 
-function saveEmployee($name)
+function saveEmployee($name, $lastname, $position, $schedule)
 {
     $db = getDatabase();
-    $statement = $db->prepare("INSERT INTO employees(name) VALUES (?)");
-    return $statement->execute([$name]);
+    $statement = $db->prepare("INSERT INTO employees(name, lastname, position, schedule) VALUES (?) ");
+    return $statement->execute([$name, $lastname, $position, $schedule]);
 }
 
 function getEmployees()
 {
     $db = getDatabase();
-    $statement = $db->query("SELECT id, name FROM employees");
+    $statement = $db->query("SELECT id, name, lastname, position, schedule FROM employees");
     return $statement->fetchAll();
 }
 
